@@ -1,0 +1,117 @@
+<ion-view view-title="Privacy" ng-controller="DashCtrl as dash">
+  <ion-content class="padding">
+
+<div id="q1" ng-show="dash.checked1">
+  <div class="card">
+  <div class="item item-text-wrap">
+In general, how concerned are you about the protection of your privacy ?</div>
+</div>  
+<div class="list">
+
+  <label class="item item-radio">
+    <input type="radio" name="group"  ng-model="dash.questions[0]" value="4" ng-change="dash.check(1)">
+    <div class="item-content">
+      Very concerned
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>  <label class="item item-radio">
+    <input type="radio" name="group" ng-model="dash.questions[0]" value="2" ng-change="dash.check(1)">
+    <div class="item-content">
+      Concerned
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>  
+
+  <label class="item item-radio">
+    <input type="radio" name="group" ng-model="dash.questions[0]" value="1" ng-change="dash.check(1)">
+    <div class="item-content">
+      Not concerned at all
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+
+<a href="#" class="button button-block button-assertive" ng-click="dash.ignoreQuestions()">Not yet</a>
+</div>
+</div>  
+<div id="q2" ng-show="dash.checked2">
+  <div class="card">
+  <div class="item item-text-wrap">
+Do you usually share your personal information with organizations that ask for it?</div>
+</div>  
+<div class="list">
+
+  <label class="item item-radio">
+    <input type="radio" name="group"  ng-model="dash.questions[1]" value="3" ng-change="dash.check(2)">
+    <div class="item-content">
+      Never
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>  <label class="item item-radio">
+    <input type="radio" name="group" ng-model="dash.questions[1]" value="2" ng-change="dash.check(2)">
+    <div class="item-content">
+      Rarely
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>  
+
+  <label class="item item-radio">
+    <input type="radio" name="group" ng-model="dash.questions[1]" value="1" ng-change="dash.check(2)">
+    <div class="item-content">
+      Sometimes
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label> 
+
+   <label class="item item-radio">
+    <input type="radio" name="group" ng-model="dash.questions[1]" value="0" ng-change="dash.check(2)">
+    <div class="item-content">
+      Always
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+</div>
+
+</div>
+
+
+<div id="q3" ng-show="dash.checked3">
+  <div class="card">
+  <div class="item item-text-wrap">
+If the personal information you have given to an organization is lost, stolen or unintentionally exposed, do you think that organization would notify you? 
+</div>
+</div>  
+<div class="list">
+
+  <label class="item item-radio">
+    <input type="radio" name="group"  ng-model="dash.questions[2]" value="4" ng-change="dash.check(3)">
+    <div class="item-content">
+      Yes
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>  
+
+  <label class="item item-radio">
+    <input type="radio" name="group" ng-model="dash.questions[2]" value="2" ng-change="dash.check(3)">
+    <div class="item-content">
+      No
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+</div>
+</div>
+
+<div id="result" ng-show="dash.result">
+ <div class="card">
+  <div class="item item-text-wrap">
+Thanks, we have specified your privacy settings</div>
+</div>  
+  <p>response 1: {{dash.questions[0]}} </p>
+  <p>response 2: {{dash.questions[1]}}</p>
+  <p>response 3: {{dash.questions[2]}}</p>
+  <p>Your score is: {{dash.privacy.score}} </p>
+  <p>Your Group is: {{dash.getGroup()}} </p>
+  <p>Your Group user is: {{dash.privacy.userGroup}} </p>
+</div>
+
+</ion-content>
+</ion-view>
